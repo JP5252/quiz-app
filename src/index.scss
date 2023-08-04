@@ -59,6 +59,12 @@ body {
 			margin-top: 15px;
 			cursor: pointer;
 		}
+
+		.selected-answer {
+			background: $primary;
+			border: 1px solid $accent;
+			color: $bg;
+		}
 	}
 }
 

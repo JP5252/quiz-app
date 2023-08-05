@@ -1,3 +1,3 @@
 # Quiz Application
 
-A basic quiz application made using react and vite.
+This is a Quiz application written with react and vite, quizzing the user on their knowledge of the C language.

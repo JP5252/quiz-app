@@ -1,55 +1,65 @@
+//Quiz questions
 export const jsQuizz = {
 	questions: [
 	  {
 		question:
-		  "Which of the following is used in React.js to increase performance?",
+		  "Which statement will properly free allocated memory?",
 		choices: [
-		  "Virtual DOM",
-		  "Original DOM",
+		  "dealloc()",
+		  "free()",
 		  "Both A and B",
 		  "None of the above",
 		],
 		type: "MCQs",
-		correctAnswer: "Virtual DOM",
+		correctAnswer: "free()",
 	  },
 	  {
-		question: "What is ReactJS?",
+		question: "Is C a compiled or interpreted language?",
 		choices: [
-		  "Server-side framework",
-		  "User Interface framework",
-		  "both a and b",
+		  "Compiled",
+		  "Interpreted",
 		  "None of the above",
+		  "I have no idea what that means",
 		],
 		type: "MCQs",
-		correctAnswer: "User Interface framework",
+		correctAnswer: "Compiled",
 	  },
 	  {
 		question:
-		  "Identify the one which is used to pass data to components from outside",
-		choices: ["Render with arguments", "setState", "PropTypes", "props"],
-		type: "MCQs",
-		correctAnswer: "props",
-	  },
-	  {
-		question: "In which language is React.js written?",
-		choices: ["Python", "Java", "C#", "JavaScript"],
-		type: "MCQs",
-		correctAnswer: "JavaScript",
-	  },
-	  {
-		question: "What is Babel?",
+		  "How can you pass the integer variables num1 and num2 into the function addnum(int num1, int num2) in C?",
 		choices: [
-		  "JavaScript interpreter",
-		  "JavaScript transpiler",
-		  "JavaScript compiler",
+			"addnum(num1, num2)",
+			"addnum(num1, num2);", 
+			"addnum(&num1, &num2);", 
+			"addnum(*num1, *num2);"],
+		type: "MCQs",
+		correctAnswer: "addnum(&num1, &num2);",
+	  },
+	  {
+		question: "Who created the C language?",
+		choices: [
+			"George Washington", 
+			"Bill Gates", 
+			"Clint Reginald", 
+			"Dennis Ritchie"],
+		type: "MCQs",
+		correctAnswer: "Dennis Ritchie",
+	  },
+	  {
+		question: "What is the name of the C compiler?",
+		choices: [
+		  "GCC",
+		  "GMCS",
+		  "C Realtime Compiler",
 		  "None of the above",
 		],
 		type: "MCQs",
-		correctAnswer: "JavaScript compiler",
+		correctAnswer: "GCC",
 	  },
 	],
   };
 
+//for keeping track of user results
 export const resultInitialState = {
 	score: 0,
 	correctAnswers: 0,

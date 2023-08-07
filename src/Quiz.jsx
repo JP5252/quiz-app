@@ -9,8 +9,8 @@ const Quiz = ({ questions }) => {
 	const [answer, setAnswer] = useState(null);
 	const [result, setResult] = useState(resultInitialState);
 	const [showResult, setShowResult] = useState(false);
-
-	const { question, choices, correctAnswer } = questions[currentQuestion];
+	const [inputAnswer, setInputAnswer] = useState('');
+	const { question, choices, correctAnswer, type } = questions[currentQuestion];
 
 	//when an answer button is clicked
 	const onAnswerClick = (answer, index) => {
@@ -43,17 +43,31 @@ const Quiz = ({ questions }) => {
 		}
 	};
 
+	//user presses try again on result page
 	const onTryAgain = () => {
 		setResult(resultInitialState);
 		setShowResult(false);
 	}
 
-	return (
-	<div className="quiz-container">
-		{!showResult ? (		<>
-			<span className="active-question-no">{currentQuestion + 1}</span>
-			<span className="total-question">/{questions.length}</span>
-			<h2>{question}</h2>
+	//for handling the input change in the input box
+	const handleInputChange = (evt) => {
+		setInputAnswer(evt.target.value);
+
+		if(evt.target.value === correctAnswer) {
+			setAnswer(true);
+		} else {
+			setAnswer(false);
+		}
+	}
+
+	//chooses UI for the question based on the type, Multiple choice is default
+	const getAnswerUI = () => {
+		
+		if (type === 'FIB') {
+			return <input value={inputAnswer} onChange={handleInputChange}/>;
+		}
+
+		return (
 			<ul>
 				{
 					choices.map((answer, index) => (
@@ -67,8 +81,19 @@ const Quiz = ({ questions }) => {
 					))
 				}
 			</ul>
+		)
+	}
+
+	return (
+	<div className="quiz-container">
+		{!showResult ? (		<>
+			<span className="active-question-no">{currentQuestion + 1}</span>
+			<span className="total-question">/{questions.length}</span>
+			<h2>{question}</h2>
+			{getAnswerUI()}
 			<div className="footer">
-				<button onClick={onClickNext} disabled={answerIdx ===null}>
+				<button onClick={onClickNext} 
+				disabled={answerIdx === null && !inputAnswer}>
 					{currentQuestion === questions.length - 1 ? "Finish" : "Next"}
 				</button>
 			</div>

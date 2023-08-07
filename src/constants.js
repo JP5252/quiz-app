@@ -47,14 +47,8 @@ export const jsQuizz = {
 	  },
 	  {
 		question: "What is the name of the C compiler?",
-		choices: [
-		  "GCC",
-		  "GMCS",
-		  "C Realtime Compiler",
-		  "None of the above",
-		],
-		type: "MCQs",
-		correctAnswer: "GCC",
+		type: "FIB",
+		correctAnswer: ("GCC" && "gcc"),
 	  },
 	],
   };
